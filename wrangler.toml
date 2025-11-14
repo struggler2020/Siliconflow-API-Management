@@ -1,0 +1,49 @@
+# ========================================
+# Cloudflare Workers 配置文件
+# ========================================
+
+# Worker名称
+name = "api-key-management"
+
+# Worker主文件
+main = "worker-backend.js"
+
+# 兼容日期（使用最新的Workers运行时）
+compatibility_date = "2024-01-01"
+
+# 账号ID（可选，部署时会自动设置）
+# account_id = ""
+
+# Workers类型
+workers_dev = true
+
+# D1数据库绑定
+[[d1_databases]]
+binding = "db"  # 代码中使用的变量名（必须是"db"）
+database_name = "api_key_management_db"  # 数据库名称
+database_id = ""  # 数据库ID，需要替换为实际的ID
+
+# 环境变量（可选）
+[vars]
+# JWT_SECRET = "your-secret-key-here"
+
+# 部署环境配置
+[env.production]
+name = "api-key-management-prod"
+
+# [env.production.d1_databases]
+# binding = "db"
+# database_name = "api_key_management_db_prod"
+# database_id = ""
+
+# 开发环境配置
+[env.development]
+name = "api-key-management-dev"
+
+# Worker限制
+# limits.cpu_ms = 50  # CPU时间限制（毫秒）
+
+# 路由配置（可选，用于自定义域名）
+# [[routes]]
+# pattern = "api.yourdomain.com/*"
+# zone_name = "yourdomain.com"
