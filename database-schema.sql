@@ -157,11 +157,12 @@ CREATE TABLE IF NOT EXISTS config (
 -- 插入默认管理员账号
 -- 用户名: admin
 -- 密码: admin123 (请在部署后立即修改)
+-- 密码哈希使用 SHA-256(password + 'salt') 算法
 INSERT OR IGNORE INTO admins (id, username, password_hash, created_at)
 VALUES (
   'admin_default_001',
   'admin',
-  '$2a$10$rKZLXvqQ5.YvHX9xXqEJVuXGKqJqJQJQFQyZ5qXZqZqZqZqZqZqZq',
+  'GR7mrJGQez9rgBazmSXGlokm4E0PnGHUDaf1aN1q5uc=',
   datetime('now')
 );
 
