@@ -44,6 +44,13 @@ name = "api-key-management-dev"
 # limits.cpu_ms = 50  # CPU时间限制（毫秒）
 
 # 路由配置（可选，用于自定义域名）
+# 取消下面的注释并替换为你的域名以绑定自定义域名
 # [[routes]]
 # pattern = "api.yourdomain.com/*"
 # zone_name = "yourdomain.com"
+#
+# 使用方法：
+# 1. 将 yourdomain.com 替换为你的域名
+# 2. 在 Cloudflare Dashboard 中将域名托管到 Cloudflare
+# 3. 执行 wrangler deploy
+# 4. 访问 https://api.yourdomain.com 即可绕过 workers.dev 限制
